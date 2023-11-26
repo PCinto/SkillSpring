@@ -12,7 +12,7 @@
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'static/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -59,21 +59,20 @@
           <li><a href="{% url 'events' %}">Events</a></li>
           <li><a href="{% url 'pricing' %}">Pricing</a></li>
 
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+           <li class="dropdown"><a href="#"><span>Popular Courses</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Other Courses</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="{% url 'datascience' %}">Data Science</a></li>
+                  <li><a href="{% url 'networking' %}">Networking</a></li>
+                  <li><a href="{% url 'GraphicDesign' %}">Graphic Design</a></li>
+                  <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
+                  <li><a href="{% url 'SoftwareEngineering' %}">Software Engineering</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="{% url 'cybersecurity' %}">Cyber Security</a></li>
+              <li><a href="{% url 'datascience' %}">Data Science</a></li>
+              <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
             </ul>
           </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -107,10 +106,10 @@
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h4>Web Development</h4>
-                  <p class="price">$169</p>
+                  <p class="price">Ksh.55,000</p>
                 </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
+                <h3><a href="{% url 'SoftwareEngineering' %}">Software Engineering</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -127,16 +126,94 @@
             </div>
           </div> <!-- End Course Item-->
 
+             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+              <img src="{% static 'static/assets/img/course-2.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Network Engineering</h4>
+                  <p class="price">Ksh.35,000</p>
+                </div>
+
+                <h3><a href="{% url 'networking' %}">Networking</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static 'static/assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
+                    <span>Lana</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;35
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;42
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="course-item">
               <img src="{% static 'static/assets/img/course-2.jpg' %}" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Marketing</h4>
-                  <p class="price">$250</p>
+                  <h4>Data Science</h4>
+                  <p class="price">Ksh.65,000</p>
                 </div>
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
+                <h3><a href="{% url 'datascience' %}">Data Science</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static 'static/assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
+                    <span>Lana</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;35
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;42
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+              <img src="{% static 'static/assets/img/course-2.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Data Science</h4>
+                  <p class="price">Ksh.55,000</p>
+                </div>
+
+                <h3><a href="{% url 'dataanalysis' %}">Data Analysis</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static 'static/assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
+                    <span>Lana</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;35
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;42
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+              <img src="{% static 'static/assets/img/course-2.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Computer Graphics</h4>
+                  <p class="price">Ksh.25,000</p>
+                </div>
+
+                <h3><a href="{% url 'GraphicDesign' %}">Graphic Design</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -158,11 +235,11 @@
               <img src="{% static 'static/assets/img/course-3.jpg' %}" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Content</h4>
-                  <p class="price">$180</p>
+                  <h4>IT Security</h4>
+                  <p class="price">Ksh.40,000</p>
                 </div>
 
-                <h3><a href="{% url 'courses-details' %}">Copywriting</a></h3>
+                <h3><a href="{% url 'cybersecurity' %}">Cyber Security</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">

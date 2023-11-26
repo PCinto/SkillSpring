@@ -12,4 +12,18 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('pricing/', views.pricing, name='pricing'),
     path('trainers/', views.trainers, name='trainers'),
+    path('pay/', views.pay, name='pay'),
+
+    path('software/', views.software, name='SoftwareEngineering'),
+    path('datascience/', views.datascience, name='datascience'),
+    path('cybersecurity/', views.cybersecurity, name='cybersecurity'),
+    path('networking/', views.networking, name='networking'),
+    path('GraphicDesign/', views.GraphicDesign, name='GraphicDesign'),
+    path('dataanalysis/', views.dataanalysis, name='dataanalysis'),
+
+    path('form/', views.form, name='form'),
+
+
+    path('token/', views.token, name='token'),
+    path('stk/', views.stk, name='stk'),
 ]

@@ -12,7 +12,7 @@
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'static/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -58,21 +58,20 @@
              <li><a href="{% url 'events' %}">Events</a></li>
              <li><a href="{% url 'pricing' %}">Pricing</a></li>
 
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Popular Courses</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Other Courses</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="{% url 'datascience' %}">Data Science</a></li>
+                  <li><a href="{% url 'networking' %}">Networking</a></li>
+                  <li><a href="{% url 'GraphicDesign' %}">Graphic Design</a></li>
+                  <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
+                  <li><a href="{% url 'SoftwareEngineering' %}">Software Engineering</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="{% url 'cybersecurity' %}">Cyber Security</a></li>
+              <li><a href="{% url 'datascience' %}">Data Science</a></li>
+              <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
             </ul>
           </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>

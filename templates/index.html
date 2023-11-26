@@ -12,7 +12,7 @@
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'static/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -45,7 +45,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">SkillSpring</a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'index' %}">SkillSpring</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -58,21 +58,20 @@
           <li><a href="{% url 'events' %}">Events</a></li>
           <li><a href="{% url 'pricing' %}">Pricing</a></li>
 
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Popular Courses</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Other Courses</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="{% url 'datascience' %}">Data Science</a></li>
+                  <li><a href="{% url 'networking' %}">Networking</a></li>
+                  <li><a href="{% url 'GraphicDesign' %}">Graphic Design</a></li>
+                  <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
+                  <li><a href="{% url 'SoftwareEngineering' %}">Software Engineering</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="{% url 'cybersecurity' %}">Cyber Security</a></li>
+              <li><a href="{% url 'datascience' %}">Data Science</a></li>
+              <li><a href="{% url 'dataanalysis' %}">Data Analysis</a></li>
             </ul>
           </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -89,7 +88,7 @@
   <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h2>We are team of talented designers and Software Developers!</h2>
       <a href="{% url 'courses' %}" class="btn-get-started">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -102,7 +101,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'static/assets/img/about.jpg' %}" class="img-fluid" alt="">
+            <img src="{% static 'static/assets/img/ju.jpg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -303,11 +302,11 @@
               <img src="{% static 'static/assets/img/course-1.jpg' %}" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Web Development</h4>
-                  <p class="price">$169</p>
+                  <h4>Data Science</h4>
+                  <p class="price">Ksh.65,000</p>
                 </div>
 
-                <h3><a href="{% url 'courses-details' %}">Website Design</a></h3>
+                <h3><a href="{% url 'datascience' %}">Data Science</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -329,11 +328,11 @@
               <img src="{% static 'static/assets/img/course-2.jpg' %}" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Marketing</h4>
-                  <p class="price">$250</p>
+                  <h4>Graphic Design</h4>
+                  <p class="price">Ksh.25,000</p>
                 </div>
 
-                <h3><a href="{% url 'courses-details' %}">Search Engine Optimization</a></h3>
+                <h3><a href="{% url 'GraphicDesign' %}">Graphic Design</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -355,11 +354,11 @@
               <img src="{% static 'static/assets/img/course-3.jpg' %}" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Content</h4>
-                  <p class="price">$180</p>
+                  <h4>Network Engineering</h4>
+                  <p class="price">Ksh.35,000</p>
                 </div>
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
+                <h3><a href="{% url 'networking' %}">Networking</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -390,8 +389,8 @@
             <div class="member">
               <img src="{% static 'static/assets/img/trainers/trainer-1.jpg' %}" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>Walter White</h4>
-                <span>Web Development</span>
+                <h4>Rono Davis</h4>
+                <span>Data Science</span>
                 <p>
                   Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
                 </p>
@@ -409,8 +408,8 @@
             <div class="member">
               <img src="{% static 'static/assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>Sarah Jhinson</h4>
-                <span>Marketing</span>
+                <h4>Sarah Atieno</h4>
+                <span>Graphic Design</span>
                 <p>
                   Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
                 </p>
@@ -429,7 +428,7 @@
               <img src="{% static 'static/assets/img/trainers/trainer-3.jpg' %}" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>William Anderson</h4>
-                <span>Content</span>
+                <span>Networking</span>
                 <p>
                   Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
                 </p>
