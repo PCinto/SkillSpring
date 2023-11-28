@@ -6,12 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Products</title>
+
+       <style>
+        /* Custom CSS to create rounded form border */
+        .rounded-form {
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+    </style>
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 
-   <!-- Favicons -->
+    <!-- Favicons -->
   <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
@@ -75,66 +86,102 @@
 
     </div>
   </header><!-- End Header -->
+    <br><br><br><br>
 
-<br><br><br><br>
-<h1 class="text-center text-danger">Add Products</h1>
-<form method="post" action="/add/">
+<h1 class="text-center text-danger">Register Course</h1>
+<form class="rounded-form m-5 bg-primary-subtle p-5" method="post" action="/joined/">
     {% csrf_token %}
 <div class="row">
     <div class="col">
-        <label for="name">Name</label>
+        <label for="name">Full Name</label>
     </div>
      <div class="col">
          {{ form.name }}
     </div>
 </div>
+    <br>
 
 <div class="row">
     <div class="col">
-        <label for="price">Price</label>
+        <label for="course">Course</label>
     </div>
      <div class="col">
-         {{ form.price }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="description">Description</label>
-    </div>
-     <div class="col">
-         {{ form.description }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="origin">Product Origin</label>
-    </div>
-     <div class="col">
-         {{ form.origin }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="color">Color</label>
-    </div>
-     <div class="col">
-         <select name="color" id="color">
-             <option disabled selected>Select Color</option>
-             <option value="brown">Brown</option>
-             <option value="black">Black</option>
+         <select name="course" id="course">
+             <option disabled selected>Select Course</option>
+            <option value="Networking">Networking</option>
+        <option value="Data Science">Data Science</option>
+        <option value="Software Engineering">Software Engineering</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Data Analysis">Data Analysis</option>
          </select>
     </div>
 </div>
+    <br>
 
 <div class="row">
     <div class="col">
-       <button type="submit" class="btn btn-primary">Save</button>
+        <label for="phone">Phone Number</label>
     </div>
      <div class="col">
-         <a href="{% url 'show' %}" class="btn btn-warning">See Product</a>
+         {{ form.phone }}
+    </div>
+</div>
+    <br>
+
+<div class="row">
+    <div class="col">
+        <label for="email" type="email">Email</label>
+    </div>
+     <div class="col">
+         {{ form.email }}
+    </div>
+</div>
+    <br>
+
+<div class="row">
+    <div class="col">
+        <label for="origin">Country</label>
+    </div>
+     <div class="col">
+         <select name="origin" id="origin">
+             <option disabled selected>Select Country</option>
+            <option value="Kenya">Kenya</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Uganda">Uganda</option>
+        <option value="South Sudan">South Sudan</option>
+        <option value="Ethiopia">Ethiopia</option>
+        <option value="Somalia">Somalia</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="South Africa">South Africa</option>
+         </select>
+    </div>
+</div>
+    <br>
+
+<div class="row">
+    <div class="col">
+        <label for="time">Time</label>
+    </div>
+
+     <div class="col">
+         <select name="time" id="time">
+             <option disabled selected>Select Time</option>
+             <option value="8AM - 11AM">8AM - 11AM</option>
+             <option value="11AM - 2PM">11AM - 2PM</option>
+             <option value="5PM - 8PM">5PM - 8PM</option>
+         </select>
+    </div>
+</div>
+    <br>
+
+<div class="row">
+    <div class="col">
+         <a href="{% url 'show' %}" class="btn btn-warning">My Course</a>
+    </div>
+
+     <div class="col">
+         <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </div>
 

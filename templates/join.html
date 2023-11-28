@@ -11,7 +11,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 
-   <!-- Favicons -->
+ <!-- Favicons -->
   <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
@@ -30,10 +30,18 @@
   <!-- Template Main CSS File -->
 <link href="{% static 'static/assets/css/style.css' %}" rel="stylesheet">
 
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
-<!-- ======= Header ======= -->
+
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
@@ -76,10 +84,12 @@
     </div>
   </header><!-- End Header -->
 
-<br><br><br><br>
+  <br><br><br><br>
+
 <h1 class="text-center text-danger">Add Products</h1>
-<form method="post" action="/add/">
+<form method="post" action="/join/">
     {% csrf_token %}
+
 <div class="row">
     <div class="col">
         <label for="name">Name</label>
@@ -91,50 +101,53 @@
 
 <div class="row">
     <div class="col">
-        <label for="price">Price</label>
+        <label for="course">Course</label>
     </div>
      <div class="col">
-         {{ form.price }}
+         {{ form.name }}
     </div>
 </div>
 
 <div class="row">
     <div class="col">
-        <label for="description">Description</label>
+        <label for="phone">Phone</label>
     </div>
      <div class="col">
-         {{ form.description }}
+         {{ form.phone }}
     </div>
 </div>
 
 <div class="row">
     <div class="col">
-        <label for="origin">Product Origin</label>
+        <label for="email">Email</label>
     </div>
      <div class="col">
-         {{ form.origin }}
+         {{ form.email }}
     </div>
 </div>
 
+
 <div class="row">
     <div class="col">
-        <label for="color">Color</label>
+        <label for="time">Time</label>
     </div>
      <div class="col">
-         <select name="color" id="color">
-             <option disabled selected>Select Color</option>
-             <option value="brown">Brown</option>
-             <option value="black">Black</option>
+         <select name="time" id="time">
+             <option disabled selected>Select Time</option>
+             <option value="11AM - 2PM">11AM - 2PM</option>
+             <option value="5PM - 8PM">5PM - 8PM</option>
          </select>
     </div>
 </div>
+    <br><br>
 
 <div class="row">
     <div class="col">
-       <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{% url 'show' %}" class="btn btn-warning">See Product</a>
     </div>
+
      <div class="col">
-         <a href="{% url 'show' %}" class="btn btn-warning">See Product</a>
+          <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </div>
 

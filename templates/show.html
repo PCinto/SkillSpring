@@ -5,13 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Products</title>
-    {% load static %}
+    <title>Products</title>
+        {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 
-   <!-- Favicons -->
+<!-- Favicons -->
   <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
@@ -75,69 +75,42 @@
 
     </div>
   </header><!-- End Header -->
+    <br><br><br><br>
+<h1 class="text-center">Student Data</h1>
+<table class="table table-info" style="margin: 0 auto">
+    <thead class="table-dark">
+    <tr>
+        <th>Full Name</th>
+        <th>Course</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    </thead>
 
-<br><br><br><br>
-<h1 class="text-center text-danger">Add Products</h1>
-<form method="post" action="/add/">
-    {% csrf_token %}
-<div class="row">
-    <div class="col">
-        <label for="name">Name</label>
-    </div>
-     <div class="col">
-         {{ form.name }}
-    </div>
-</div>
+  <tbody>
+  {% for product in products %}
+  <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.course }}</td>
+      <td>{{ product.phone }}</td>
+      <td>{{ product.email }}</td>
+      <td>{{ product.origin }}</td>
+      <td>{{ product.time }}</td>
+      <td>
+          <a href="/edit/{{ product.id }}" class="btn btn-success">Edit</a>
+          <a href="/delete/{{ product.id }}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'pay' %}" class="btn btn-warning">PAY</a>
+      </td>
+  </tr>
 
-<div class="row">
-    <div class="col">
-        <label for="price">Price</label>
-    </div>
-     <div class="col">
-         {{ form.price }}
-    </div>
-</div>
+{% endfor %}
+  </tbody>
+</table>
+<br>
+<center><a href="/joined/" class="btn btn-primary">Add Course</a></center>
 
-<div class="row">
-    <div class="col">
-        <label for="description">Description</label>
-    </div>
-     <div class="col">
-         {{ form.description }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="origin">Product Origin</label>
-    </div>
-     <div class="col">
-         {{ form.origin }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="color">Color</label>
-    </div>
-     <div class="col">
-         <select name="color" id="color">
-             <option disabled selected>Select Color</option>
-             <option value="brown">Brown</option>
-             <option value="black">Black</option>
-         </select>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-       <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-     <div class="col">
-         <a href="{% url 'show' %}" class="btn btn-warning">See Product</a>
-    </div>
-</div>
-
-</form>
 </body>
 </html>

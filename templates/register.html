@@ -1,17 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'static/assets/vendor/style.css' %}">
 
-
-   <!-- Favicons -->
+  <!-- Favicons -->
   <link href="{% static 'static/assets/img/fav.png' %}" rel="icon">
   <link href="{% static 'static/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
@@ -75,69 +74,26 @@
 
     </div>
   </header><!-- End Header -->
-
-<br><br><br><br>
-<h1 class="text-center text-danger">Add Products</h1>
-<form method="post" action="/add/">
-    {% csrf_token %}
-<div class="row">
-    <div class="col">
-        <label for="name">Name</label>
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form method="post">
+                {% csrf_token %}
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-control"><input class="form-control" type="text" name="firstname" placeholder="Firstname"></div>
+                <div class="form-control"><input class="form-control" type="text" name="lastname" placeholder="Lastname"></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a href="{% url 'login' %}" class="already">You already have an account? Login here.</a>
+            </form>
+        </div>
     </div>
-     <div class="col">
-         {{ form.name }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="price">Price</label>
-    </div>
-     <div class="col">
-         {{ form.price }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="description">Description</label>
-    </div>
-     <div class="col">
-         {{ form.description }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="origin">Product Origin</label>
-    </div>
-     <div class="col">
-         {{ form.origin }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <label for="color">Color</label>
-    </div>
-     <div class="col">
-         <select name="color" id="color">
-             <option disabled selected>Select Color</option>
-             <option value="brown">Brown</option>
-             <option value="black">Black</option>
-         </select>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-       <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-     <div class="col">
-         <a href="{% url 'show' %}" class="btn btn-warning">See Product</a>
-    </div>
-</div>
-
-</form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
